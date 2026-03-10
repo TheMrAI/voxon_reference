@@ -19,11 +19,13 @@ void vertex() {
 	surface_to_light = light_position - surface_world_posiiton;
 	surface_to_view = CAMERA_POSITION_WORLD - surface_world_posiiton;
 	
-	vec3 position_as_normal = normalize(VERTEX.xyz);
-	
+	// The incorrect, "curved" normal surface
+	//vec3 position_as_normal = normalize(VERTEX.xyz);
+	//NORMAL = MODEL_NORMAL_MATRIX * position_as_normal;
+	// The correct normals
+	NORMAL = MODEL_NORMAL_MATRIX * NORMAL;
 	VERTEX = (PROJECTION_MATRIX * VIEW_MATRIX * vec4(surface_world_posiiton, 1.0)).xyz;
 	POSITION = PROJECTION_MATRIX * VIEW_MATRIX * vec4(surface_world_posiiton, 1.0);
-    NORMAL = MODEL_NORMAL_MATRIX * position_as_normal;
 }
 
 void fragment() {
