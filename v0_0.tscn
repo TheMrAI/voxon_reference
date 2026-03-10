@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://ckgyiufco3w8"]
+
+[ext_resource type="Shader" uid="uid://db55jym0ihud1" path="res://v0_0.gdshader" id="1_k3vi1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k3vi1"]
+render_priority = 0
+shader = ExtResource("1_k3vi1")
+
+[sub_resource type="BoxMesh" id="BoxMesh_0djlh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4aaos"]
+render_priority = 0
+shader = ExtResource("1_k3vi1")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_k3vi1"]
+
+[sub_resource type="Environment" id="Environment_k3vi1"]
+background_energy_multiplier = 0.0
+reflected_light_source = 1
+
+[node name="Node3D" type="Node3D" unique_id=509677353]
+
+[node name="CubeMesh" type="MeshInstance3D" parent="." unique_id=11381778]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_k3vi1")
+mesh = SubResource("BoxMesh_0djlh")
+
+[node name="PlaneMesh" type="MeshInstance3D" parent="." unique_id=1880942780]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 3, 0, -1, 0)
+material_override = SubResource("ShaderMaterial_4aaos")
+mesh = SubResource("PlaneMesh_k3vi1")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1460947536]
+transform = Transform3D(0.8137134, -0.013180201, -0.58111686, 0.42118397, 0.70236474, 0.573836, 0.40059263, -0.7116953, 0.5770749, -10, 10, 10)
+light_color = Color(0.48452926, 1, 0.48452926, 1)
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+spot_range = 33.848
+spot_attenuation = 0.0
+spot_angle = 10.0
+spot_angle_attenuation = 0.007812425
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1450993897]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+keep_aspect = 0
+environment = SubResource("Environment_k3vi1")
+current = true
+fov = 90.0
+near = 1.0
+far = 20000.0
