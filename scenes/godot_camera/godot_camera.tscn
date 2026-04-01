@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://5l8i8gj5038r"]
+
+[ext_resource type="Script" uid="uid://naq4f7y3e57o" path="res://scenes/godot_camera/godot_camera.gd" id="1_ii3oj"]
+
+[node name="GodotCamera" type="Camera3D" unique_id=1157709461]
+script = ExtResource("1_ii3oj")

@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://ckgyiufco3w8"]
 
-[ext_resource type="Shader" uid="uid://db55jym0ihud1" path="res://v0_0.gdshader" id="1_k3vi1"]
+[ext_resource type="Shader" uid="uid://db55jym0ihud1" path="res://scenes/v0_0/v0_0.gdshader" id="1_52tsj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k3vi1"]
 render_priority = 0
-shader = ExtResource("1_k3vi1")
+shader = ExtResource("1_52tsj")
 
 [sub_resource type="BoxMesh" id="BoxMesh_0djlh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4aaos"]
 render_priority = 0
-shader = ExtResource("1_k3vi1")
+shader = ExtResource("1_52tsj")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_k3vi1"]
 
@@ -18,7 +18,7 @@ shader = ExtResource("1_k3vi1")
 background_energy_multiplier = 0.0
 reflected_light_source = 1
 
-[node name="Node3D" type="Node3D" unique_id=509677353]
+[node name="V0_0" type="Node3D" unique_id=509677353]
 
 [node name="CubeMesh" type="MeshInstance3D" parent="." unique_id=11381778]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

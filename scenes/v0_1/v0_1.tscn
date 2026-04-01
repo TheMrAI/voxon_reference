@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cv0kf7tnxswha"]
+
+[ext_resource type="Texture2D" uid="uid://ll7igrab26he" path="res://textures/kenney_prototypeTextures/Dark/texture_01.png" id="1_2eehf"]
+[ext_resource type="Shader" uid="uid://d47k841535ml" path="res://scenes/v0_1/v0_1.gdshader" id="1_n4nk0"]
+[ext_resource type="Texture2D" uid="uid://bgau711q5mx2e" path="res://textures/cube/cube_atlas.png" id="2_khx0f"]
+[ext_resource type="PackedScene" uid="uid://5l8i8gj5038r" path="res://scenes/godot_camera/godot_camera.tscn" id="4_khx0f"]
+[ext_resource type="Texture2D" uid="uid://b1scvq8ii2t17" path="res://textures/polyhaven/sky_hdr/kloofendal_48d_partly_cloudy_puresky_4k.exr" id="5_qyodb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_khx0f"]
+render_priority = 0
+shader = ExtResource("1_n4nk0")
+shader_parameter/plane_texture = ExtResource("2_khx0f")
+shader_parameter/uv_scale = Vector2(1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2eehf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n4nk0"]
+render_priority = 0
+shader = ExtResource("1_n4nk0")
+shader_parameter/plane_texture = ExtResource("1_2eehf")
+shader_parameter/uv_scale = Vector2(50, 50)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_n4nk0"]
+size = Vector2(1, 1)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_d1pvo"]
+panorama = ExtResource("5_qyodb")
+
+[sub_resource type="Sky" id="Sky_feiaj"]
+sky_material = SubResource("PanoramaSkyMaterial_d1pvo")
+
+[sub_resource type="Environment" id="Environment_i8whx"]
+background_mode = 2
+sky = SubResource("Sky_feiaj")
+
+[node name="V0_1" type="Node3D" unique_id=2051480393]
+
+[node name="CubeMesh" type="MeshInstance3D" parent="." unique_id=715519212]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_khx0f")
+mesh = SubResource("BoxMesh_2eehf")
+
+[node name="PlaneMesh" type="MeshInstance3D" parent="." unique_id=1979372075]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, -1, 0)
+material_override = SubResource("ShaderMaterial_n4nk0")
+mesh = SubResource("PlaneMesh_n4nk0")
+
+[node name="GodotCamera" parent="." unique_id=1157709461 instance=ExtResource("4_khx0f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+environment = SubResource("Environment_i8whx")
