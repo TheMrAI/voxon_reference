@@ -13,7 +13,6 @@ void fragment() {
 	vec3 sample = texture(plane_texture, UV).rgb;
 	// force SRGB color
 	ALBEDO = mix(pow((sample + vec3(0.055)) * (1.0 / (1.0 + 0.055)),vec3(2.4)),sample * (1.0 / 12.92),lessThan(sample,vec3(0.04045)));
-	//ALBEDO = texture(plane_texture, UV).rgb;
 }
 
 //void light() {

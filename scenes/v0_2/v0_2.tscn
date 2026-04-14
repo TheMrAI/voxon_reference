@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cv0kf7tnxswha"]
 
 [ext_resource type="Texture2D" uid="uid://ll7igrab26he" path="res://textures/kenney_prototypeTextures/Dark/texture_01.png" id="1_2eehf"]
-[ext_resource type="Shader" uid="uid://d47k841535ml" path="res://scenes/v0_1/v0_1.gdshader" id="1_n4nk0"]
+[ext_resource type="Shader" uid="uid://d47k841535ml" path="res://scenes/v0_2/v0_2.gdshader" id="1_n4nk0"]
 [ext_resource type="Texture2D" uid="uid://bgau711q5mx2e" path="res://textures/cube/cube_atlas.png" id="2_khx0f"]
 [ext_resource type="PackedScene" uid="uid://5l8i8gj5038r" path="res://scenes/godot_camera/godot_camera.tscn" id="4_khx0f"]
 [ext_resource type="Texture2D" uid="uid://b1scvq8ii2t17" path="res://textures/polyhaven/sky_hdr/kloofendal_48d_partly_cloudy_puresky_4k.exr" id="5_qyodb"]
