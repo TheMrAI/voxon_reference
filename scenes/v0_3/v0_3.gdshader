@@ -1,11 +1,19 @@
 shader_type spatial;
 
-render_mode unshaded, skip_vertex_transform, cull_disabled;
+render_mode unshaded, skip_vertex_transform;
 
 const vec3 world_light_direction = normalize(vec3(1.0, -1.0, -1.0));
 
-vec3 force_srgb(vec3 linear_color) {
-	return mix(pow((linear_color + vec3(0.055)) * (1.0 / (1.0 + 0.055)),vec3(2.4)),linear_color * (1.0 / 12.92),lessThan(linear_color,vec3(0.04045)));
+vec3 srgb_to_linear(vec3 srgb_color) {
+	vec3 above = pow((srgb_color + vec3(0.055)) / vec3(1.055), vec3(2.4));
+	vec3 below = srgb_color / vec3(12.92);
+	return mix(above, below, lessThanEqual(srgb_color, vec3(0.04045)));
+}
+
+vec3 linear_to_srgb(vec3 linear_color) {
+	vec3 above = (vec3(1.055) * pow(linear_color, vec3(1.0 / 2.4))) - vec3(0.055);
+	vec3 below = vec3(12.92) * linear_color;
+	return mix(above, below, lessThanEqual(linear_color, vec3(0.0031308)));
 }
 
 // flat means not to interpolate the value for the fragment shader
@@ -30,7 +38,12 @@ void fragment() {
 	
 	float similarity = (dot(-light_direction, normal) + 1.0) / 2.0;
 	vec3 color = mix(vec3(0.0, 1.0, 0.0), vec3(0.0, 0.0, 1.0), similarity);
-	ALBEDO = force_srgb(color);
+	// We are using linear values to define the green and blue colors and Godot
+	// renders using linear color space, so no transformation is needed.
+	ALBEDO = color;
+	// In case you would like to experiment with incorrect values.
+	//ALBEDO = linear_to_srgb(color);
+	//ALBEDO = srgb_to_linear(color);
 }
 
 //void light() {
