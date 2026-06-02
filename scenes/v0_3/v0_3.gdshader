@@ -1,5 +1,6 @@
 shader_type spatial;
 
+// turn on wireframe by adding "wireframe"
 render_mode unshaded, skip_vertex_transform;
 
 const vec3 world_light_direction = normalize(vec3(1.0, -1.0, -1.0));

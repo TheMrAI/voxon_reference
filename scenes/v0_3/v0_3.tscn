@@ -16,6 +16,7 @@
 [ext_resource type="ArrayMesh" uid="uid://ba8kms2oyj8mj" path="res://scenes/v0_3/suzanne_smooth_967.obj" id="13_32tmo"]
 [ext_resource type="ArrayMesh" uid="uid://c7sknifhg4ti8" path="res://scenes/v0_3/suzanne_flat_967_messed_up_normals.obj" id="15_h0efy"]
 [ext_resource type="ArrayMesh" uid="uid://cbw4t1jjfmt7i" path="res://scenes/v0_3/suzanne_smooth_967_messed_up_normals.obj" id="16_yki35"]
+[ext_resource type="PackedScene" uid="uid://cggqb75a8w8r" path="res://addons/debug_menu/debug_menu.tscn" id="17_yki35"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_khx0f"]
 render_priority = 0
@@ -43,6 +44,10 @@ sky_material = SubResource("PanoramaSkyMaterial_d1pvo")
 [sub_resource type="Environment" id="Environment_i8whx"]
 background_mode = 2
 sky = SubResource("Sky_feiaj")
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.0
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_yki35"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sxw0g"]
 render_priority = 0
@@ -92,13 +97,17 @@ material_override = SubResource("ShaderMaterial_khx0f")
 mesh = SubResource("BoxMesh_2eehf")
 
 [node name="PlaneMesh" type="MeshInstance3D" parent="." unique_id=1979372075]
-transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0.0042095184, -1.0000005, -0.0007240772)
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, 0, -1, 0)
 material_override = SubResource("ShaderMaterial_n4nk0")
 mesh = SubResource("PlaneMesh_n4nk0")
 
 [node name="GodotCamera" parent="." unique_id=1157709461 instance=ExtResource("4_6k0iu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 1, 5)
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 7, 4)
+keep_aspect = 0
 environment = SubResource("Environment_i8whx")
+attributes = SubResource("CameraAttributesPractical_yki35")
+current = true
+size = 1.135
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1121773797]
 
@@ -151,3 +160,383 @@ mesh = ExtResource("16_yki35")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -5)
 material_override = SubResource("ShaderMaterial_mkgw2")
 mesh = ExtResource("15_h0efy")
+
+[node name="CanvasLayer" parent="." unique_id=2064997024 instance=ExtResource("17_yki35")]
+
+[node name="Dragons" type="Node3D" parent="." unique_id=207044413]
+visible = false
+
+[node name="StanfordDragonSmooth700k" type="MeshInstance3D" parent="Dragons" unique_id=899364769]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -10, 5, -5)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k2" type="MeshInstance3D" parent="Dragons" unique_id=2008312993]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -5, 5, -5)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k3" type="MeshInstance3D" parent="Dragons" unique_id=289903697]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 0, 5, -5)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k4" type="MeshInstance3D" parent="Dragons" unique_id=1697098629]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 5, 5, -5)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k5" type="MeshInstance3D" parent="Dragons" unique_id=2084706224]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 10, 5, -5)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k6" type="MeshInstance3D" parent="Dragons" unique_id=2040117381]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -10, 5, -10)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k7" type="MeshInstance3D" parent="Dragons" unique_id=741743758]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -5, 5, -10)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k8" type="MeshInstance3D" parent="Dragons" unique_id=269586847]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 0, 5, -10)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k9" type="MeshInstance3D" parent="Dragons" unique_id=1686852767]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 5, 5, -10)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k10" type="MeshInstance3D" parent="Dragons" unique_id=232476680]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 10, 5, -10)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k11" type="MeshInstance3D" parent="Dragons" unique_id=948631985]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -10, 5, -15)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k12" type="MeshInstance3D" parent="Dragons" unique_id=2147330879]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -5, 5, -15)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k13" type="MeshInstance3D" parent="Dragons" unique_id=901928300]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 0, 5, -15)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k14" type="MeshInstance3D" parent="Dragons" unique_id=1456055397]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 5, 5, -15)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k15" type="MeshInstance3D" parent="Dragons" unique_id=1361495674]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 10, 5, -15)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k16" type="MeshInstance3D" parent="Dragons" unique_id=1542203669]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -10, 5, -20)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k17" type="MeshInstance3D" parent="Dragons" unique_id=1869405077]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -5, 5, -20)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k18" type="MeshInstance3D" parent="Dragons" unique_id=398613009]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 0, 5, -20)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k19" type="MeshInstance3D" parent="Dragons" unique_id=684531983]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 5, 5, -20)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k20" type="MeshInstance3D" parent="Dragons" unique_id=666692746]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 10, 5, -20)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k21" type="MeshInstance3D" parent="Dragons" unique_id=2066389812]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -10, 5, -25)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k22" type="MeshInstance3D" parent="Dragons" unique_id=1365831752]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -5, 5, -25)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k23" type="MeshInstance3D" parent="Dragons" unique_id=1506870036]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 0, 5, -25)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k24" type="MeshInstance3D" parent="Dragons" unique_id=486500106]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 5, 5, -25)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k25" type="MeshInstance3D" parent="Dragons" unique_id=1371618209]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 10, 5, -25)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k26" type="MeshInstance3D" parent="Dragons" unique_id=191119329]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -10, 10, -5)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k27" type="MeshInstance3D" parent="Dragons" unique_id=1291038348]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -5, 10, -5)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k28" type="MeshInstance3D" parent="Dragons" unique_id=107695670]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 0, 10, -5)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k29" type="MeshInstance3D" parent="Dragons" unique_id=972339861]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 5, 10, -5)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k30" type="MeshInstance3D" parent="Dragons" unique_id=1259108772]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 10, 10, -5)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k31" type="MeshInstance3D" parent="Dragons" unique_id=1697051439]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -10, 10, -10)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k32" type="MeshInstance3D" parent="Dragons" unique_id=1993895131]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -5, 10, -10)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k33" type="MeshInstance3D" parent="Dragons" unique_id=517679939]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 0, 10, -10)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k34" type="MeshInstance3D" parent="Dragons" unique_id=1262450433]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 5, 10, -10)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k35" type="MeshInstance3D" parent="Dragons" unique_id=137999781]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 10, 10, -10)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k36" type="MeshInstance3D" parent="Dragons" unique_id=1704697408]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -10, 10, -15)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k37" type="MeshInstance3D" parent="Dragons" unique_id=1781679844]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -5, 10, -15)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k38" type="MeshInstance3D" parent="Dragons" unique_id=2093028462]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 0, 10, -15)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k39" type="MeshInstance3D" parent="Dragons" unique_id=111106040]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 5, 10, -15)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k40" type="MeshInstance3D" parent="Dragons" unique_id=889378554]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 10, 10, -15)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k41" type="MeshInstance3D" parent="Dragons" unique_id=641479324]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -10, 10, -20)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k42" type="MeshInstance3D" parent="Dragons" unique_id=1555266805]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -5, 10, -20)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k43" type="MeshInstance3D" parent="Dragons" unique_id=935379030]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 0, 10, -20)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k44" type="MeshInstance3D" parent="Dragons" unique_id=2090629184]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 5, 10, -20)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k45" type="MeshInstance3D" parent="Dragons" unique_id=423894171]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 10, 10, -20)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k46" type="MeshInstance3D" parent="Dragons" unique_id=703978574]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -10, 10, -25)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k47" type="MeshInstance3D" parent="Dragons" unique_id=1740395184]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -5, 10, -25)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k48" type="MeshInstance3D" parent="Dragons" unique_id=1309400398]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 0, 10, -25)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k49" type="MeshInstance3D" parent="Dragons" unique_id=1699762768]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 5, 10, -25)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k50" type="MeshInstance3D" parent="Dragons" unique_id=1053476982]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 10, 10, -25)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k51" type="MeshInstance3D" parent="Dragons" unique_id=809706227]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -10, 15, -5)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k52" type="MeshInstance3D" parent="Dragons" unique_id=1190441341]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -5, 15, -5)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k53" type="MeshInstance3D" parent="Dragons" unique_id=1867628354]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 0, 15, -5)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k54" type="MeshInstance3D" parent="Dragons" unique_id=21157879]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 5, 15, -5)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k55" type="MeshInstance3D" parent="Dragons" unique_id=1498289826]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 10, 15, -5)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k56" type="MeshInstance3D" parent="Dragons" unique_id=503679414]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -10, 15, -10)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k57" type="MeshInstance3D" parent="Dragons" unique_id=1123916378]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -5, 15, -10)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k58" type="MeshInstance3D" parent="Dragons" unique_id=1119615472]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 0, 15, -10)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k59" type="MeshInstance3D" parent="Dragons" unique_id=347677768]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 5, 15, -10)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k60" type="MeshInstance3D" parent="Dragons" unique_id=1446754240]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 10, 15, -10)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k61" type="MeshInstance3D" parent="Dragons" unique_id=1434197583]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -10, 15, -15)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k62" type="MeshInstance3D" parent="Dragons" unique_id=1929988778]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -5, 15, -15)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k63" type="MeshInstance3D" parent="Dragons" unique_id=1110896181]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 0, 15, -15)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k64" type="MeshInstance3D" parent="Dragons" unique_id=311321152]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 5, 15, -15)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k65" type="MeshInstance3D" parent="Dragons" unique_id=1005021641]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 10, 15, -15)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k66" type="MeshInstance3D" parent="Dragons" unique_id=661814617]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -10, 15, -20)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k67" type="MeshInstance3D" parent="Dragons" unique_id=427479924]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -5, 15, -20)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k68" type="MeshInstance3D" parent="Dragons" unique_id=1525582344]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 0, 15, -20)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k69" type="MeshInstance3D" parent="Dragons" unique_id=847978556]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 5, 15, -20)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k70" type="MeshInstance3D" parent="Dragons" unique_id=652752756]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 10, 15, -20)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k71" type="MeshInstance3D" parent="Dragons" unique_id=1206229222]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -10, 15, -25)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k72" type="MeshInstance3D" parent="Dragons" unique_id=741516215]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, -5, 15, -25)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k73" type="MeshInstance3D" parent="Dragons" unique_id=24921238]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 0, 15, -25)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k74" type="MeshInstance3D" parent="Dragons" unique_id=1425116398]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 5, 15, -25)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
+
+[node name="StanfordDragonSmooth700k75" type="MeshInstance3D" parent="Dragons" unique_id=1176728176]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 10, 15, -25)
+material_override = SubResource("ShaderMaterial_32tmo")
+mesh = ExtResource("11_nbb47")
